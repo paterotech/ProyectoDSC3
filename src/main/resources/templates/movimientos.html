@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: head">
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<aside th:replace="base :: aside"></aside>
+
+<div class="main_content-index">
+    <div class="header-index">
+        <h2>Gestión de Ingresos y Egresos</h2>
+    </div>
+    <div class="sub-title">
+        <h3>Transacciones</h3>
+    </div>
+
+    <div class="content-table">
+
+        <table class="table">
+            <div class="nuevo-mov">
+                <a href="/nuevoRegMov" class="texo-reg-nue"><i class="fas fa-user-plus"></i>&nbsp;Nuevo registro</a>
+            </div>
+
+            <thead class="thead">
+                <tr>
+                    <td scope="col">Id</td>
+                    <td scope="col">Concepto</td>
+                    <th scope="col">Ingreso</th>
+                    <th scope="col">Egreso</th>
+                    <th scope="col">Empleado</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Fecha Creación</th>
+                    <th scope="col">Fecha Actualización</th>
+                    <td scope="col" class="acciones" colspan="2">Acciones</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="mov:${movimientos}">
+                    <th th:text="${mov.id}"></th>
+                    <td th:text="${mov.concepto}"></td>
+                    <td th:text="${mov.ingreso}"></td>
+                    <td th:text="${mov.egreso}"></td>
+                    <td th:text="${mov.idEmpleado}"></td>
+                    <td th:text="${mov.idEmpresa}"></td>
+                    <td th:text="${mov.createdAt}"></td>
+                    <td th:text="${mov.updateAt}"></td>
+
+                    <td class="acciones">
+                        <a th:href="@{/{id}/editar/(id=${mov.id})}" class="btn-warning">
+                            <i class="fas fa-edit"></i>Editar</a>
+                        <a href="#" onclick="eliminarMovimiento(this)" class="btn-danger">
+                            <i class="fas fa-trash-alt"></i>Eliminar</a>
+                        <form th:action="@{/{id}/eliminar/(id=${mov.id})}" method="post"></form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="suma-total">
+            <label class="total-text">Total $: </label>
+            <p class="p-totales" th:text="${totales}"></p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function eliminarMovimiento(elemento) {
+        var ok = confirm('¿Estas seguro de eliminar al contacto?');
+
+        if (ok) {
+            elemento.nextElementSibling.submit();
+        }
+    }
+</script>
+<footer th:replace="base :: footer"></footer>
+</body>
+</html>
