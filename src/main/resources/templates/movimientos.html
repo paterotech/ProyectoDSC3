@@ -3,6 +3,7 @@
 <head th:replace="base :: head">
     <meta charset="UTF-8">
 
+
 </head>
 <body>
 <aside th:replace="base :: aside"></aside>
@@ -31,7 +32,7 @@
                     <th scope="col">Empleado</th>
                     <th scope="col">Empresa</th>
                     <th scope="col">Fecha Creación</th>
-                    <th scope="col">Fecha Actualización</th>
+<!--                    <th scope="col">Fecha Actualización</th>-->
                     <td scope="col" class="acciones" colspan="2">Acciones</td>
                 </tr>
             </thead>
@@ -44,7 +45,7 @@
                     <td th:text="${mov.idEmpleado}"></td>
                     <td th:text="${mov.idEmpresa}"></td>
                     <td th:text="${mov.createdAt}"></td>
-                    <td th:text="${mov.updateAt}"></td>
+<!--                    <td th:text="${mov.updateAt}"></td>-->
 
                     <td class="acciones">
                         <a th:href="@{/{id}/editar/(id=${mov.id})}" class="btn-warning">
@@ -75,5 +76,7 @@
     }
 </script>
 <footer th:replace="base :: footer"></footer>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/funciones.js"></script>
 </body>
 </html>

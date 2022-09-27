@@ -51,7 +51,7 @@
             </div>
 
             <div class="bt-guardar-form-mov">
-                <input type="submit" class="btn-guardar" value="Guardar">
+                <input type="submit" onclick="actualiza(this)" class="btn-guardar" value="Guardar">
             </div>
 
         </form>
@@ -59,5 +59,7 @@
 </div>
 
 <footer th:replace="base :: footer"></footer>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/funciones.js"></script>
 </body>
 </html>

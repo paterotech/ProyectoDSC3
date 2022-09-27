@@ -53,19 +53,42 @@
 <!--                <div th:if="${#fields.hasErrors('fechaCreacion')}" th:errors="*{fechaCreacion}" class="invalid-feedback"></div>-->
             </div>
 
-            <div class="text-campos-7">
-                <label for="updateAt" class="label">Fecha actualización</label>
-                <input id="updateAt" type="date" th:field="*{updateAt}" class="input" th:errorClass="is-invalid">
-<!--                <div th:if="${#fields.hasErrors('fechaCreacion')}" th:errors="*{fechaCreacion}" class="invalid-feedback"></div>-->
-            </div>
+<!--            <div class="text-campos-7">-->
+<!--                <label for="updateAt" class="label">Fecha actualización</label>-->
+<!--                <input id="updateAt" type="date" th:field="*{updateAt}" class="input" th:errorClass="is-invalid">-->
+<!--            </div>-->
 
             <div class="bt-guardar-form-mov">
-                <input type="submit" class="btn-guardar" value="Guardar">
+                <input type="submit" onclick="guarda(this)" class="btn-guardar" value="Guardar">
             </div>
 
         </form>
     </div>
 </div>
+
+<script>
+    // function guarda(elemento) {
+    //     Swal.fire({
+    //         html:'Registro guardado..✔',
+    //         toast:true,
+    //         icon:'success',
+    //         padding:'1rem',
+    //         position:'top-right',
+    //         timer:'3000',
+    //         timerProgressBar:true
+    //     })
+
+        // var ok = confirm('¿guardado...✔');
+
+        // if (ok) {
+        //     elemento.nextElementSibling.submit();
+        // }
+
+   // }
+</script>
 <footer th:replace="base :: footer"></footer>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/funciones.js"></script>
 </body>
 </html>

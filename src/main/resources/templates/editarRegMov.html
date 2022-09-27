@@ -51,18 +51,19 @@
             <input id="createdAt" type="date" th:field="*{createdAt}" class="input" th:errorClass="is-invalid">
         </div>
 
-        <div class="text-campos-7">
-            <label for="updateAt" class="label">Fecha actualización</label>
-            <input id="updateAt" type="date" th:field="*{updateAt}" class="input" th:errorClass="is-invalid">
-        </div>
+<!--        <div class="text-campos-7">-->
+<!--            <label for="updateAt" class="label">Fecha actualización</label>-->
+<!--            <input id="updateAt" type="date" th:field="*{updateAt}" class="input" th:errorClass="is-invalid">-->
+<!--        </div>-->
 
         <div class="bt-guardar-form-mov">
-          <input type="submit" class="btn-guardar" value="Guardar">
+          <input type="submit" onclick="actualiza(this)" class="btn-guardar" value="Guardar">
         </div>
 
     </form>
   </div>
 </div>
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/funciones.js"></script>
 </body>
 </html>

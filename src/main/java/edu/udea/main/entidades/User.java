@@ -9,15 +9,11 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     @Column(unique = true)
     private String nickname;
-
     @Column(unique = true)
     private String email;
-
     private String image;
-
     @Column(unique = true)
     private String auth0Id;
 
